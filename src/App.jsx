@@ -2,32 +2,38 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import PersonalInfo from './PersonalInfo'
+import Education from './Education'
+import ResumePreview from './ResumePreview'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [personalInfo, setPersonalInfo] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
+  const [education, setEducation] = useState({
+    schoolName: "",
+    gradYear: "",
+    gradGrade: "",
+  });
+
+  const handleSubmit = () => {
+    const data = { personalInfo, education };
+    localStorage.setItem("formData", JSON.stringify(data));
+    console.log(data);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <>
+      <PersonalInfo data={personalInfo} setData={setPersonalInfo} />
+      <Education data={education} setData={setEducation} />
+      <button onClick={handleSubmit}>Submit</button>
+      <ResumePreview
+        personalInfo={personalInfo}
+        education={education}
+        />
     </>
   )
 }

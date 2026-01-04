@@ -1,36 +1,32 @@
 import { useState } from "react";
 
-function Education() {
-  const [schoolName, setSchoolName] = useState("");
-  const [gradYear, setGradYear] = useState("");
-  const [gradGrade, setGradGrade] = useState("");
+function Education( {data, setData}) {
+
 
    return (
     <div>
       <input
         type="text"
         placeholder="School"
-        value={schoolName}
-        onChange={(e) => setSchoolName(e.target.value)}
-      />
+        value={data.schoolName}
+        onChange={(e) => setData({ ...data, schoolName: e.target.value })}
+       />
 
       <input
         type="number"
         placeholder="Graduation Year"
-        value={gradYear}
-        onChange={(e) => setGradYear(e.target.value)}
+        value={data.gradYear}
+        onChange={(e) =>  setData({ ...data, gradYear: e.target.value })}
+
       />
 
       <input
         type="number"
         placeholder="Grade"
-        value={gradGrade}
-        onChange={(e) => setGradGrade(e.target.value)}
+        value={data.gradGrade}
+        onChange={(e) => setData({ ...data, gradGrade: e.target.value })}
       />
 
-      <p>
-        {schoolName} {gradYear} — {gradGrade}
-      </p>
     </div>
   );
 
