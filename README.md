@@ -1,16 +1,42 @@
-# React + Vite
+Curriculum Maker
+A clean, interactive resume builder built with React. Create professional resumes with real-time preview as you type.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
 
-Currently, two official plugins are available:
+Live Preview - See your resume update instantly as you fill in your information
+Clean Design - Professional, recruiter-friendly resume layout
+Modular Components - Well-organized React component architecture
+Local Storage - Save your progress automatically
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sections
 
-## React Compiler
+Personal Information (Name, Email)
+Education (School, Graduation Year, Grade)
+Skills (Technical and soft skills)
+Work Experience (Company, Role, Duration, Description)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Getting Started
 
-## Expanding the ESLint configuration
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Run development server
+
+npm run dev
+
+# Build for production
+
+npm run build
+
+Tech Stack
+
+React 19 - UI library
+Vite - Build tool and dev server
+
+Future Improvements
+
+PDF export functionality
+Multiple resume templates
+Drag-and-drop section reordering
+Cloud save with user accounts
+
+Built as a learning project to practice React state management and component composition.
